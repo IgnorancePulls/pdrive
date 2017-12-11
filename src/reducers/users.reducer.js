@@ -51,19 +51,13 @@ export const usersReducer = (state = initialState, action) => {
         case userActions.SAVE_USER_INDEX:
             return {
                 ...state,
-                // users: state.users.map((user) => {
-                //     if(user === action.userId) {
-                //         return Object.assign({}, user, {
-                //             loading: true,
-                //             hasError: false
-                //         })
-                //     }
-                // })
+                loading: true,
+                hasError: false,
             };
         case userActions.SAVE_USER_INDEX_COMPLETED:
             return {
                 ...state,
-                loading: true,
+                loading: false,
                 hasError: false,
             };
 

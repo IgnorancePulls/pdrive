@@ -37,7 +37,7 @@ export const generateSortableIndex = (users, newIndex) => {
 };
 
 const generateUniqueID = (max, min) => {
-    if (max === min || min > max) return 0;
+    if (max === min || min > max) return Math.random();
     return Math.random() * (max - min) + min;
 };
 

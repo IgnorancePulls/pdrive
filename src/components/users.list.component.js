@@ -10,7 +10,7 @@ import {ERROR_MESSAGE} from '../constatns/messages';
 const UsersListComponent = ({filteredUsers, openUserDetailsModal, deleteUser, saveUser, isLoading, hasError}) => {
     let spinner = null;
     let message = null;
-    if (isLoading) spinner = <Spinner name="pacman" color="#2cbf55"/>;
+    if (isLoading) spinner = <Spinner name="pacman" fadeIn="0" color="#2cbf55"/>;
 
     if (hasError) {
         message = <MessageComponent
