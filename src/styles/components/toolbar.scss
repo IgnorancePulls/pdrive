@@ -1,0 +1,54 @@
+@import '../settings/colors';
+@import '../settings/layout';
+
+$tool-bar__border: .1rem solid $color-concrete;
+$tool-bar__padding: $indent--l $indent--s;
+$tool-bar-heading__margin: 0;
+$tool-bar-search-field__max-width: 22rem;
+$tool-bar-search-field__padding: 0 $indent--l;
+$tool-bar-search-field__margin: 0;
+$tool-bar-search-icon__top: .9rem;
+$tool-bar-search-icon__left: .6rem;
+$tool-bar-search-icon__height: 1.5rem;
+$tool-bar-new-user-link__margin: 0 $indent--m 0;
+
+.toolbar {
+    border-bottom: $tool-bar__border;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $tool-bar__padding;
+}
+
+.toolbarHeading {
+    margin: $tool-bar-heading__margin;
+}
+
+.toolbarSearch {
+    max-width: $tool-bar-search-field__max-width;
+    position: relative;
+}
+
+.toolbarSearchField {
+    composes: inputText from '../elements/forms.scss';
+    padding: $tool-bar-search-field__padding;
+    margin: $tool-bar-search-field__margin;
+}
+
+.toolbarSearchIcon {
+    position: absolute;
+    height: $tool-bar-search-icon__height;
+    left: $tool-bar-search-icon__left;
+    top: $tool-bar-search-icon__top;
+}
+
+.link {
+    composes: link from '../elements/link.scss';
+    display: block;
+    margin: $tool-bar-new-user-link__margin;
+}
+
+.toolsWrapper {
+    display: flex;
+    align-items: center;
+}

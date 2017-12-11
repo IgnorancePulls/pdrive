@@ -1,0 +1,91 @@
+@import '../settings/layout';
+@import '../settings/colors';
+@import '../settings/typography';
+
+$user-list-item__padding: $indent--s;
+$user-list-item__border: .1rem solid $color-concrete;
+$user-list-item__border-radius: .3rem;
+$user-list-item__margin: 0 0 $indent--xs 0;
+$user-list-item__font-size: $default-font-size;
+$user-list-item-user-name__color: $color-shark;
+$user-list-item-user-name__font-size: $font-size--m;
+$user-list-item-user-name__font-family: $default-font-family;
+$user-list-item-organization__color: $color-nobel;
+$user-list-item-organization__height: 1.5rem;
+$user-list-item-organization__margin: 0 $indent--xs 0 0;
+$user-list-item-organization__top: .1rem;
+$user-list-item-organization__font-size: $default-font-size;
+$user-list-item-organization__font-family: $default-font-family;
+
+$user-miniature__height: 4rem;
+$user-miniature__width: 4rem;
+$user-miniature__font-size: $font-size--m;
+$user-miniature__line-height: 4rem;
+
+
+.userListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: $user-list-item__margin;
+    padding: $user-list-item__padding;
+    border: $user-list-item__border;
+    border-radius: $user-list-item__border-radius;
+}
+
+.userListItemUserName {
+    composes: paragraph from '../elements/paragraph.scss';
+    color: $user-list-item-user-name__color;
+    font-size: $user-list-item-user-name__font-size;
+    font-family: $user-list-item-user-name__font-family;
+}
+
+.userListItemOrganization {
+    composes: paragraph from '../elements/paragraph.scss';
+    display: inline-block;
+    color: $user-list-item-organization__color;
+    font-family: $user-list-item-organization__font-family;
+    font-size: $user-list-item-organization__font-size;
+
+}
+
+.userListItemOrganizationIcon {
+    width: auto;
+    display: inline-block;
+    position: relative;
+    height: $user-list-item-organization__height;
+    margin: $user-list-item-organization__margin;
+    top: $user-list-item-organization__top;
+}
+
+.userMiniature {
+    height: $user-miniature__height;
+    width: $user-miniature__width;
+    line-height: $user-miniature__line-height;
+    font-size: $user-miniature__font-size;
+}
+
+.deleteUserButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.saveUserButton {
+    composes: buttonPrimarySmall from '../elements/buttons.scss';
+    margin:  0 0 0 10px;
+    background: $color-jungle-green--primary;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: $color-jungle-green--secondary;
+    }
+}

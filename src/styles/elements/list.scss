@@ -1,0 +1,8 @@
+@import '../settings/layout';
+
+$list__padding: $indent--s 0;
+
+.list {
+    list-style: none;
+    padding: $list__padding;
+}

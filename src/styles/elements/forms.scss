@@ -1,0 +1,68 @@
+@import '../settings/layout';
+@import '../settings/colors';
+@import '../settings/typography';
+
+$inputTextArea__border: .1rem solid $color-silver-sand;
+$inputTextArea__border--active: .1rem solid $color-royal-blue--primary;
+$inputTextArea__padding: 0 $indent--xs;
+$inputTextArea__color: $color-shark;
+$inputTextArea__height: 3.2rem;
+$inputTextArea__margin: 0 0 2.5rem;
+$inputTextArea__border-radius: .3rem;
+
+$label__color: $color-dov-gray;
+$label__font-size: $font-size--sm;
+$label__font-weight: $font-weight--xs;
+$error-message__color: $color-cinnabar;
+$warning-message__color: $color-royal-blue--primary;
+
+.field {
+    position: relative;
+}
+
+.inputText {
+    border: $inputTextArea__border;
+    padding: $inputTextArea__padding;
+    color: $inputTextArea__color;
+    margin: $inputTextArea__margin;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: $inputTextArea__border-radius;
+    height: $inputTextArea__height;
+
+    &:focus,
+    &:active {
+        outline: none;
+        border: $inputTextArea__border--active;
+    }
+}
+
+.inputNumber {
+    composes: inputText;
+
+    &::-webkit-inner-spin-button
+    &::-webkit-outer-spin-button {
+        appearance: none;
+    }
+}
+
+.inputEmail {
+    composes: inputText;
+}
+
+.label {
+    color: $label__color;
+    font-size: $label__font-size;
+    font-weight: $label__font-weight;
+}
+
+.errorMessage {
+    position: absolute;
+    left: 0;
+    top: 49px;
+    color: $error-message__color;
+}
+
+.warningMessage {
+    color: $warning-message__color;
+}

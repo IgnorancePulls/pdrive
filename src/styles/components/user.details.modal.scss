@@ -1,0 +1,136 @@
+@import '../effects/transitions';
+@import '../settings/colors';
+@import '../settings/layout';
+@import '../settings/typography';
+
+$modal-details-wrapper__padding: 0 $indent--s;
+
+$modal-content__max-width: 40rem;
+$modal-content__margin: 0 auto;
+
+$modal-header__background: $color-alabastera;
+$modal-header__border-bottom: .1rem solid $color-alto;;
+
+$modal-title__margin: 0;
+
+$modal-close-button__height: $indent--xs;
+$modal-close-button__width: $indent--xs;
+
+$modal-avatar-wrapper__padding: 0;
+$modal-avatar-wrapper__margin: 0 auto $indent--l;
+$modal-avatar-wrapper__height: 12.8rem;
+$modal-avatar-wrapper__width: 12.8rem;
+$modal-avatar-wrapper__line-height: 12.8rem;
+$modal-avatar-wrapper__font-size: 4rem;
+
+$primary-details__padding: $indent--xxl 0;
+$primary-details__border--bottom: .1rem solid $color-alto;
+
+$user-name__font-weight: $font-weight--xl;
+$user-name__margin: 0 0 $indent--xxs;
+
+$secondary-details-width__padding: $indent--xxl 0;
+$secondary-details-heading__width: 30%;
+$secondary-details-heading__color: $color-dov-gray;
+$secondary-details-data__width: 70%;
+$secondary-details-data__padding--left: $indent--xxxl;
+$secondary-details-data__color: $color-silver;
+
+$modal-back-button__margin: 0 0 0 auto;
+
+.overlay {
+    composes: modalOverlay from '../elements/modal.scss';
+}
+.modalContent {
+    composes: modalContent from '../elements/modal.scss';
+    max-width: $modal-content__max-width;
+    margin: $modal-content__margin;
+}
+
+.modalDetailsWrapper {
+    padding: $modal-details-wrapper__padding;
+}
+
+.modalHeader {
+    composes: modalHeader from '../elements/modal.scss';
+    background: $modal-header__background;
+    border-bottom: $modal-header__border-bottom;
+}
+
+.modalTitle {
+    margin: $modal-title__margin;
+}
+
+.modalCloseButton {
+    background: transparent;
+    composes: button from '../elements/buttons.scss';
+}
+
+.modalAvatarWrapper {
+    padding: $modal-avatar-wrapper__padding;
+    margin: $modal-avatar-wrapper__margin;
+    height: $modal-avatar-wrapper__height;
+    width: $modal-avatar-wrapper__width;
+    line-height: $modal-avatar-wrapper__line-height;
+    font-size: $modal-avatar-wrapper__font-size;
+}
+
+.primaryDetails {
+    padding: $primary-details__padding;
+    border-bottom: $primary-details__border--bottom;
+}
+
+.userName {
+    font-weight: $user-name__font-weight;
+    margin: $user-name__margin;
+    text-align: center;
+}
+
+.userPhone {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: $color-jungle-green--primary;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        text-decoration: none;
+        color: $color-jungle-green--primary;
+    }
+}
+
+.secondaryDetailsWrapper {
+    padding:  $secondary-details-width__padding;
+}
+
+.secondaryDetails {
+    composes: table from '../elements/table.scss';
+}
+
+.secondaryDetailsHeading {
+    composes: tableHeading from '../elements/table.scss';
+    text-align: right;
+    vertical-align: baseline;
+    color: $secondary-details-heading__color;
+    width: $secondary-details-heading__width;
+}
+
+.secondaryDetailsData {
+    composes: tableCell from '../elements/table.scss';
+    text-align: left;
+    vertical-align: baseline;
+    padding-left: $secondary-details-data__padding--left;
+    color: $secondary-details-data__color;
+    width: $secondary-details-data__width;
+}
+
+.modalFooter {
+    composes: modalFooter from '../elements/modal.scss';
+}
+
+.modalBackButton {
+    composes: buttonSecondarySmall from '../elements/buttons.scss';
+    margin: $modal-back-button__margin;
+}

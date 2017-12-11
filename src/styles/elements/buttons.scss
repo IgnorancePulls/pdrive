@@ -1,0 +1,101 @@
+@import '../settings/typography';
+@import '../settings/colors';
+@import '../settings/layout';
+@import '../effects/transitions';
+
+$button__margin: 0;
+$button__border: none;
+$button__font-weight: $font-weight--l;
+$button__border-radius: .3rem;
+$button__font-size: $default-font-size;
+
+$button-primary__background: $color-royal-blue--primary;
+$button-primary__transition: $background-transition--primary;
+$button-primary--hover__background:  $color-royal-blue--secondary;
+$button-primary__color: $color-white;
+$button-primary__padding: $indent--s $indent--l;
+$button-primary--small__padding: $indent--xxs $indent--xs;
+
+$button-secondary__background: $color-white;
+$button-secondary__border: .1rem solid $color-alto;
+$button-secondary__color: $color-shark;
+$button-secondary__padding: $indent--s $indent--l;
+$button-secondary__transition: $button-primary__transition;
+$button-secondary--hover__background: $color-concrete;
+$button-secondary--small__padding: $indent--xs $indent--l;
+
+$button-secondary--disabled__color: $color-alto;
+
+$button-cancel_height: 1rem;
+$button-cancel_width: 1rem;
+
+
+.button {
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: $button__border-radius;
+    margin: $button__margin;
+    border: $button__border;
+    font-weight: $button__font-weight;
+    font-size: $button__font-size;
+}
+
+.buttonPrimary {
+    composes: button;
+    background: $button-primary__background;
+    color: $button-primary__color;
+    padding: $button-primary__padding;
+    transition: $button-primary__transition;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: $button-primary--hover__background;
+    }
+}
+
+.buttonPrimarySmall {
+    composes: buttonPrimary;
+    padding: $button-primary--small__padding;
+}
+
+.buttonSecondary {
+    composes: button;
+    border: $button-secondary__border;
+    background: $button-secondary__background;
+    color: $button-secondary__color;
+    padding: $button-secondary__padding;
+    transition: $button-secondary__transition;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: $button-secondary--hover__background;
+    }
+}
+
+.buttonSecondaryDisabled {
+    cursor: not-allowed;
+    color: $button-secondary--disabled__color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: inherit;
+    }
+}
+
+.buttonSecondarySmall {
+    composes: buttonSecondary;
+    padding: $button-secondary--small__padding;
+}
+
+.buttonCancelIcon {
+    height: $button-cancel_height;
+    width: $button-cancel_width;
+}

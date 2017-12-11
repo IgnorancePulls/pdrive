@@ -1,0 +1,40 @@
+@import '../settings/layout';
+@import '../settings/colors';
+@import '../settings/typography';
+
+$user-avatar-wrapper__height: 100%;
+$user-avatar-wrapper__width: 100%;
+$user-avatar-wrapper__border-radius: 50%;
+$user-avatar-wrapper__background: $color-selago;
+$user-avatar-initials__line-height: inherit;
+$user-avatar-nitials__margin: 0;
+$user-avatar-nitials__color: $color-indigo;
+$user-avatar-initials__font-weight: $font-weight--l;
+$user-avatar-image_height: 100%;
+$user-avatar-font-family: $default-font-family;
+
+.userAvatarWrapper {
+    overflow: hidden;
+    height: $user-avatar-wrapper__height;
+    width: $user-avatar-wrapper__width;
+    background: $user-avatar-wrapper__background;
+    border-radius: $user-avatar-wrapper__border-radius;
+}
+
+.userAvatarInitials {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: inherit;
+
+    line-height: $user-avatar-initials__line-height;
+    margin: $user-avatar-nitials__margin;
+    color: $user-avatar-nitials__color;
+    font-weight: $user-avatar-initials__font-weight;
+    font-family: $user-avatar-font-family;
+}
+
+.userAvatarImage {
+    max-width: 100%;
+    display:block;
+    height: $user-avatar-image_height;
+}

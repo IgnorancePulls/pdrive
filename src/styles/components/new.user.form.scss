@@ -1,0 +1,55 @@
+@import '../settings/colors';
+@import '../settings/layout';
+
+$modal-styles: '../elements/modal.scss';
+$button-styles: '../elements/buttons.scss';
+
+
+$content__max-width: 40rem;
+
+$header__background: $color-alabastera;
+$header__border-bottom: .1rem solid $color-alto;
+$title__margin: 0;
+$form-wrapper-padding: $indent--s $indent--m;
+$modal-back-button__margin: 0 0 0 auto;
+
+.overlay {
+    composes: modalOverlay from $modal-styles;
+}
+
+.content {
+    composes: modalContent from $modal-styles;
+    max-width: $content__max-width;
+}
+
+.header {
+    composes: modalHeader from $modal-styles;
+    background: $header__background;
+    border-bottom: $header__border-bottom;
+}
+
+.title {
+    margin: $title__margin;
+}
+
+.formWrapper {
+    padding: $form-wrapper-padding;
+}
+
+.footer {
+    composes: modalFooter from $modal-styles;
+}
+
+.closeButton {
+    background: transparent;
+    composes: button from '../elements/buttons.scss';
+}
+
+.backButton {
+    composes: buttonSecondarySmall from $button-styles;
+    margin: $modal-back-button__margin;
+}
+
+.saveButton {
+    composes: buttonPrimary from $button-styles;
+}

@@ -1,0 +1,14 @@
+@import '../settings/layout';
+
+$pagination-wrapper__max-width: 32rem;
+$pagination-wrapper__margin: 0 auto;
+$pagination-wrapper__padding: $indent--s 0;
+
+.paginationWrapper {
+    display: flex;
+    justify-content: space-around;
+    max-width: $pagination-wrapper__max-width;
+    width: 100%;
+    margin: $pagination-wrapper__margin;
+    padding: $pagination-wrapper__padding;
+}

@@ -1,0 +1,15 @@
+@import '../settings/typography';
+@import '../settings/layout';
+@import '../settings/colors';
+
+$main__font-size: $default-font-size;
+$main__max-width: $default-max-width;
+$main__font-family: $default-font-family;
+$main__color: $color-shark;
+
+.main {
+    font-size: $main__font-size;
+    max-width: $main__max-width;
+    font-family: $main__font-family;
+    color: $main__color;
+}

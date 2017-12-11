@@ -1,0 +1,10 @@
+@import '../settings/layout';
+@import '../settings/typography';
+
+$p_margin: 0 0 $indent--xs 0;
+$p_font-size: $font-size--m;
+
+.paragraph {
+    font-size: $p_font-size;
+    margin: $p_margin;
+}

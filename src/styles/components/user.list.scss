@@ -1,0 +1,9 @@
+@import '../settings/layout';
+
+$user-list__padding: 0 $indent--s;
+
+.userList {
+    composes: list from '../elements/list.scss';
+    padding: $user-list__padding;
+}
+

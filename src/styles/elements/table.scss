@@ -1,0 +1,17 @@
+@import '../settings/layout';
+
+$table__width: 100%;
+$table-heading__padding: $indent--xs 0;
+$table-cell__padding: $indent--xs 0;
+
+.table {
+    width: $table__width;
+}
+
+.tableHeading {
+    padding: $table-heading__padding;
+}
+
+.tableCell {
+    padding: $table-cell__padding;
+}

@@ -1,0 +1,53 @@
+@import '../settings/colors';
+@import '../settings/layout';
+
+$modal-overlay__height: 100vh;
+$modal-overlay__width: 100vw;
+$modal-overlay__top: 0;
+$modal-overlay__bottom: 0;
+$modal-overlay__background: $color-semi-black;
+$modal-content__margin: 0 auto;
+$modal-content__padding: 0;
+$modal-content__background: $color-white;
+$modal-content__max-height: 100%;
+
+$modal-header__padding: $indent--s;
+
+$modal-footer__padding: .8rem $indent--s;
+$modal-footer__background: $color-alabastera;
+$modal-footer__border-top: .1rem solid $color-alto;
+
+.modalOverlay {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: $modal-overlay__width;
+    height: $modal-overlay__height;
+    top: $modal-overlay__top;
+    bottom: $modal-overlay__bottom;
+    background: $modal-overlay__background;
+    z-index: 999;
+}
+
+.modalContent {
+    display: block;
+    margin: $modal-content__margin;
+    overflow: scroll;
+    padding: $modal-content__padding;
+    background: $modal-content__background;
+    max-height: $modal-content__max-height;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: $modal-header__padding;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: space-between;
+    border-top: $modal-footer__border-top;
+    padding: $modal-footer__padding;
+    background: $modal-footer__background;
+}

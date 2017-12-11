@@ -1,0 +1,22 @@
+@import '../settings/colors';
+@import '../effects/transitions';
+
+$link__color: $color-royal-blue--primary;
+$link__color--hover: $color-royal-blue--secondary;
+
+.link {
+    color: $link__color;
+    text-decoration: none;
+    transition: $color-transition--primary;
+
+    &:active,
+    &:hover,
+    &:hover {
+        color: $link__color--hover;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: $link__color;
+    }
+}
