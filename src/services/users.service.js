@@ -22,7 +22,7 @@ export function getUsers (start, limit) {
 }
 
 export function saveUser(userDetails) {
-    let requestUrl = httpsPersonsApiPath + '?'; // + apiToken;
+    let requestUrl = httpsPersonsApiPath + '?' + apiToken;
     return fetch(requestUrl, {
         method: 'POST',
         headers: headers,

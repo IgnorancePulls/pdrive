@@ -5,16 +5,16 @@ import UserListItem from './user.list.item.component';
 import MessageComponent from './shared/messages';
 import styles from '../styles/components/user.list.scss';
 import stylesMessages from '../styles/elements/messages.scss';
+import {ERROR_MESSAGE} from '../constatns/messages';
 
 const UsersListComponent = ({filteredUsers, openUserDetailsModal, deleteUser, saveUser, isLoading, hasError}) => {
     let spinner = null;
     let message = null;
     if(isLoading) spinner = <Spinner name="pacman" color="#2cbf55"/>;
-    console.log(hasError)
+
     if(hasError) {
-        console.log('erre')
         message = <MessageComponent
-            text="OOps, something went wrong"
+            text={ERROR_MESSAGE}
             className={stylesMessages.error}
         />
     }

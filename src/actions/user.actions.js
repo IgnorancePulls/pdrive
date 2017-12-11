@@ -1,6 +1,5 @@
 import {createAction} from '../helper/action.creator';
 import {saveUser} from '../services/users.service';
-import * as usersListActions from '../actions/users.list.actions';
 import * as layoutActions from '../actions/layout.actions';
 
 export const SAVE_NEW_USER = '[NEW USER FORM] Save new user';
@@ -29,7 +28,6 @@ export function SaveUser(userDetails) {
         return saveUser(newUser).then(
             response => {
                 dispatch(SaveNewUserCompleted());
-                dispatch(usersListActions.LoadUsers());
                 dispatch(layoutActions.CloseNewUserForm())
             },
             error => dispatch(SaveNewUserFailed())

@@ -3,6 +3,7 @@
 
 $modal-styles: '../elements/modal.scss';
 $button-styles: '../elements/buttons.scss';
+$spinner-styles: '../elements/spinner.scss';
 
 
 $content__max-width: 40rem;
@@ -52,4 +53,9 @@ $modal-back-button__margin: 0 0 0 auto;
 
 .saveButton {
     composes: buttonPrimary from $button-styles;
+}
+
+.spinner {
+    composes: spinner from $spinner-styles;
+    z-index: 9;
 }

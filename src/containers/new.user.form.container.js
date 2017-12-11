@@ -4,19 +4,16 @@ import NewUserFormComponent from '../components/new.user.form.component';
 import * as newUserFormActions from '../actions/user.actions';
 import * as layoutActions from '../actions/layout.actions';
 
-const mapStateToProps = ({layoutReducer}) => {
+const mapStateToProps = ({layoutReducer, userReducer}) => {
     return {
         isOpen: layoutReducer.newUserForm.isOpen,
-        paginationStart: layoutReducer.userListPagination.start,
-        paginationLimit: layoutReducer.userListPagination.limit,
+        isLoading: userReducer.isLoading,
+        hasError: userReducer.hasError
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        changeNewUserFormInputValue: (changeEvent) => {
-            dispatch(newUserFormActions.ChangeNewUserFormInputValue(changeEvent.target.name, changeEvent.target.value))
-        },
         saveNewUser: (fieldsData) => {
             dispatch(newUserFormActions.SaveUser(fieldsData))
         },
@@ -31,9 +28,10 @@ class NewUserForm extends Component {
         return (
             <NewUserFormComponent
                 newUserFormState={this.props.newUserFormState}
-                onInputChange={this.props.changeNewUserFormInputValue}
                 onSubmit={this.props.saveNewUser}
                 onClose={this.props.closeNewUserForm}
+                isLoading={this.props.isLoading}
+                hasError={this.props.hasError}
             />
         )
     }
