@@ -1,3 +1,6 @@
+$spinner__width: 3.2rem;
+$spinner__margin: 0 auto;
+
 .spinner {
     display: block;
     position: fixed;
@@ -5,6 +8,6 @@
     transform: translateY(-50%);
     left: 0;
     right: 0;
-    margin: 0 auto;
-    width: 32px;
+    margin: $spinner__margin;
+    width: $spinner__width;
 }

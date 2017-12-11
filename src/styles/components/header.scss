@@ -2,23 +2,24 @@
 @import '../settings/layout';
 
 $header__background: $color-mako;
+$header__height: 4.8rem;
 $header-content__padding: 0 $indent--s;
 $header-content__max-width: $default-max-width;
 
 .header {
-    background: $header__background;
-    height: 4.8rem;
     position: relative;
     width: 100vw;
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
+    background: $header__background;
+    height: $header__height;
 }
 
 .headerContent {
-    max-width: $header-content__max-width;
-    padding: $header-content__padding;
     display: flex;
     align-items: center;
     height: 100%;
+    max-width: $header-content__max-width;
+    padding: $header-content__padding;
 }

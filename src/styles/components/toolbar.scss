@@ -13,11 +13,11 @@ $tool-bar-search-icon__height: 1.5rem;
 $tool-bar-new-user-link__margin: 0 $indent--m 0;
 
 .toolbar {
-    border-bottom: $tool-bar__border;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: $tool-bar__padding;
+    border-bottom: $tool-bar__border;
 }
 
 .toolbarHeading {

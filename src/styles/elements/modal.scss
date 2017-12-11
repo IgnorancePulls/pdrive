@@ -21,12 +21,12 @@ $modal-footer__border-top: .1rem solid $color-alto;
     position: fixed;
     display: flex;
     align-items: center;
+    z-index: 999;
     width: $modal-overlay__width;
     height: $modal-overlay__height;
     top: $modal-overlay__top;
     bottom: $modal-overlay__bottom;
     background: $modal-overlay__background;
-    z-index: 999;
 }
 
 .modalContent {

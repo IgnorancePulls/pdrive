@@ -21,7 +21,13 @@ $user-miniature__height: 4rem;
 $user-miniature__width: 4rem;
 $user-miniature__font-size: $font-size--m;
 $user-miniature__line-height: 4rem;
+$user-miniature__letter-spacing: -.2rem;
 
+$delete-user-button__height: 4rem;
+$delete-user-button__width: 4rem;
+$delete-user-button__font-size: $default-font-size;
+
+$save-user-button__margin: 0 0 0 $indent--xs;
 
 .userListItem {
     display: flex;
@@ -64,7 +70,7 @@ $user-miniature__line-height: 4rem;
     width: $user-miniature__width;
     line-height: $user-miniature__line-height;
     font-size: $user-miniature__font-size;
-    letter-spacing: -2px;
+    letter-spacing: $user-miniature__letter-spacing;
 }
 
 .deleteUserButton {
@@ -73,15 +79,15 @@ $user-miniature__line-height: 4rem;
     top: 0;
     background: transparent;
     border: none;
-    height: 40px;
-    width: 40px;
     cursor: pointer;
-    font-size: 1.5rem;
+    height: $delete-user-button__height;
+    width: $delete-user-button__width;
+    font-size: $delete-user-button__font-size;
 }
 
 .saveUserButton {
     composes: buttonPrimarySmall from '../elements/buttons.scss';
-    margin:  0 0 0 10px;
+    margin:  $save-user-button__margin;
     background: $color-jungle-green--primary;
 
     &:hover,

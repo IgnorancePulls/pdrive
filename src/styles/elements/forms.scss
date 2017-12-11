@@ -15,18 +15,19 @@ $label__font-size: $font-size--sm;
 $label__font-weight: $font-weight--xs;
 $error-message__color: $color-cinnabar;
 $warning-message__color: $color-royal-blue--primary;
+$error-message__top: 4.9rem;
 
 .field {
     position: relative;
 }
 
 .inputText {
+    box-sizing: border-box;
     border: $inputTextArea__border;
     padding: $inputTextArea__padding;
     color: $inputTextArea__color;
     margin: $inputTextArea__margin;
     width: 100%;
-    box-sizing: border-box;
     border-radius: $inputTextArea__border-radius;
     height: $inputTextArea__height;
 
@@ -59,7 +60,7 @@ $warning-message__color: $color-royal-blue--primary;
 .errorMessage {
     position: absolute;
     left: 0;
-    top: 49px;
+    top: $error-message__top;
     color: $error-message__color;
 }
 
