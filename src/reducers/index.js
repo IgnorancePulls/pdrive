@@ -4,7 +4,7 @@ import { reducer as formReducer } from 'redux-form'
 
 import {usersReducer} from './users.reducer';
 import {layoutReducer} from './layout.reducer';
-import {newUserFormReducer} from './new.user.form.reducer'
+import {newUserFormReducer} from './new.user.reducer'
 
 export default combineReducers({
     usersReducer,

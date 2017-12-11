@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NewUserFormComponent from '../components/new.user.form.component';
-import * as newUserFormActions from '../actions/new.user.form.actions';
+import * as newUserFormActions from '../actions/new.user.actions';
 import * as layoutActions from '../actions/layout.actions';
 
 const mapStateToProps = ({newUserFormReducer, layoutReducer}) => {
     return {
         newUserFormState: newUserFormReducer,
-        isOpen: layoutReducer.newUserForm.isOpen
+        isOpen: layoutReducer.newUserForm.isOpen,
+        paginationStart: layoutReducer.userListPagination.start,
+        paginationLimit: layoutReducer.userListPagination.limit,
     }
 };
 

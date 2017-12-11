@@ -51,28 +51,41 @@ export const usersReducer = (state = initialState, action) => {
         case userActions.SAVE_USER_INDEX:
             return {
                 ...state,
-                users: state.users.map((user) => {
-                    if(user === action.userId) {
-                        return Object.assign({}, user, {
-                            loading: true,
-                            hasError: false
-                        })
-                    }
-                })
+                // users: state.users.map((user) => {
+                //     if(user === action.userId) {
+                //         return Object.assign({}, user, {
+                //             loading: true,
+                //             hasError: false
+                //         })
+                //     }
+                // })
             };
-        case userActions.DeleteUser:
+        case userActions.SAVE_USER_INDEX_COMPLETED:
+            return {
+                ...state,
+                loading: true,
+                hasError: false,
+            };
+
+        case userActions.SAVE_USER_INDEX_FAILED:
+            return {
+                ...state,
+                loading: false,
+                hasError: true,
+            };
+        case userActions.DELETE_USER:
             return {
                 ...state,
                 loading: true,
                 hasError: false
             };
-        case userActions.DeleteUserCompleted:
+        case userActions.DELETE_USER_COMPLETED:
             return {
                 ...state,
                 loading: false,
                 hasError: false
             };
-        case userActions.DeleteUserFailed:
+        case userActions.DELETE_USER_FAILED:
             return {
                 ...state,
                 loading: false,

@@ -11,6 +11,7 @@ const headers = new Headers({
 export function getUsers (start, limit) {
     let requestUrl = httpsPersonsApiPath + '?' + apiToken;
     if (limit !== undefined && start !== undefined) {
+        console.log(limit)
         requestUrl = httpsPersonsApiPath + '?start=' + start + '&limit=' + limit + '&' + apiToken;
     }
 
@@ -21,24 +22,26 @@ export function getUsers (start, limit) {
 }
 
 export function saveUser(userDetails) {
-    let requestUrl = httpsPersonsApiPath + '?' + apiToken;
+    let requestUrl = httpsPersonsApiPath + '?'; // + apiToken;
     return fetch(requestUrl, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({...userDetails})
-    })
+    }).then(response => response.json());
 }
 
 export function deleteUser(userId) {
-    return fetch(httpsPersonsApiPath + userId + apiToken, {
+    let requestUrl = httpsPersonsApiPath + userId + '?' + apiToken;
+    return fetch(requestUrl, {
         method: 'DELETE',
     }).then(response => response.json());
 }
 
 export function updateUser(userId, updatedFields) {
-    return fetch(httpsPersonsApiPath + userId + apiToken, {
+    let requestUrl = httpsPersonsApiPath + userId + '?' + apiToken;
+    return fetch(requestUrl, {
         method: "PUT",
         headers: headers,
         body: JSON.stringify({...updatedFields})
-    })
+    }).then(response => response.json());
 }

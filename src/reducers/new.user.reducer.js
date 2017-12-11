@@ -1,4 +1,4 @@
-import * as newUserFormActions from '../actions/new.user.form.actions';
+import * as newUserFormActions from '../actions/new.user.actions';
 
 const initialState = {
     name: null,

@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 const getUsers = state => state.usersReducer.users;
-const getUsersNameFilter = state => state.form.searchUser.values;
+const getUsersNameFilter = state =>state.form.searchUser.values;
 
 export const getFilteredUsersByName = createSelector(
     [getUsers, getUsersNameFilter],

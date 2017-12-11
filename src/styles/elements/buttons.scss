@@ -96,6 +96,7 @@ $button-cancel_width: 1rem;
 }
 
 .buttonCancelIcon {
+    pointer-events: none;
     height: $button-cancel_height;
     width: $button-cancel_width;
 }

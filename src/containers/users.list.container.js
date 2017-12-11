@@ -16,6 +16,8 @@ const mapStateToProps = (state) => {
         users: state.usersReducer.users,
         paginationStart: state.layoutReducer.userListPagination.start,
         paginationLimit: state.layoutReducer.userListPagination.limit,
+        isLoading: state.usersReducer.loading,
+        hasError: state.usersReducer.hasError
     };
 };
 
@@ -41,11 +43,10 @@ class UsersList extends Component {
         if(this.props.paginationStart !== nextProps.paginationStart) {
             this.props.getUsers(nextProps.paginationStart, this.props.paginationLimit);
         }
-    }
+    };
 
     onSortEnd = ({oldIndex, newIndex}) => {
         if(oldIndex === newIndex) return;
-
         const reorderedUsersList = arrayMove(this.props.users, oldIndex, newIndex);
         const uniqueIndex = generateSortableIndex(reorderedUsersList, newIndex);
         this.props.changeUserOrder(reorderedUsersList);
@@ -61,6 +62,8 @@ class UsersList extends Component {
                 openUserDetailsModal={this.props.openUserDetailsModal}
                 saveUser={this.props.saveUser}
                 deleteUser={this.props.deleteUser}
+                isLoading={this.props.isLoading}
+                hasError={this.props.hasError}
             />
             <UserDetailsModal/>
             <UserListPagination/>

@@ -1,9 +1,21 @@
 @import '../settings/layout';
+@import '../settings/colors';
 
 $user-list__padding: 0 $indent--s;
 
 .userList {
     composes: list from '../elements/list.scss';
     padding: $user-list__padding;
+}
+
+.spinner {
+    display: block;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 32px;
 }
 
