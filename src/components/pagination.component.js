@@ -20,7 +20,7 @@ const PaginationComponent = ({next, prev, nextAllowed, prevAllowed}) => {
                 onClick={() => {
                     prevAllowed ? prev(): null
                 }}
-                text="Previous"
+                text="Prev"
             />
             <Button
                 className={nextClassName}

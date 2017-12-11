@@ -63,22 +63,6 @@ let NewUserFormComponent = ({handleSubmit, onSubmit, onClose, isLoading, hasErro
                             className={stylesForms.inputEmail}
                             validate={[fv.isEmail]}
                         />
-                        <Field
-                            name="org_id"
-                            type="number"
-                            component={InputField}
-                            label="Organization"
-                            className={stylesForms.inputNumber}
-                            validate={[fv.isNumber]}
-                        />
-                        <Field
-                            name="owner_id"
-                            type="number"
-                            component={InputField}
-                            label="Owner id"
-                            className={stylesForms.inputNumber}
-                            validate={[fv.isNumber]}
-                        />
                         <Button
                             className={styles.saveButton}
                             onClick={() => null}
