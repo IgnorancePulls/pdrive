@@ -13,19 +13,19 @@ const PaginationComponent = ({next, prev, nextAllowed, prevAllowed}) => {
         [stylesButtons.buttonSecondaryDisabled]: !prevAllowed,
     });
 
-    return(
+    return (
         <div className={styles.paginationWrapper}>
             <Button
                 className={prevClassName}
                 onClick={() => {
-                    prevAllowed ? prev(): null
+                    prevAllowed ? prev() : null
                 }}
                 text="Prev"
             />
             <Button
                 className={nextClassName}
                 onClick={() => {
-                    nextAllowed ? next(): null
+                    nextAllowed ? next() : null
                 }}
                 text="Next"
             />

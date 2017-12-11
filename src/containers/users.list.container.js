@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import UserDetailsModal from './user.details.modal.container';
 import UsersListComponent from '../components/users.list.component';
@@ -41,17 +41,17 @@ class UsersList extends Component {
     };
 
     componentWillReceiveProps(nextProps) {
-        if(this.props.paginationStart !== nextProps.paginationStart) {
+        if (this.props.paginationStart !== nextProps.paginationStart) {
             this.props.getUsers(nextProps.paginationStart, this.props.paginationLimit);
         }
 
-        if(nextProps.userSaved !== this.props.userSaved) {
+        if (nextProps.userSaved !== this.props.userSaved) {
             this.props.getUsers(this.props.paginationStart, this.props.paginationLimit);
         }
     };
 
     onSortEnd = ({oldIndex, newIndex}) => {
-        if(oldIndex === newIndex) return;
+        if (oldIndex === newIndex) return;
         const reorderedUsersList = arrayMove(this.props.users, oldIndex, newIndex);
         const uniqueIndex = generateSortableIndex(reorderedUsersList, newIndex);
         this.props.changeUserOrder(reorderedUsersList);
@@ -59,20 +59,20 @@ class UsersList extends Component {
     };
 
     render() {
-        return(
-        <div>
-            <UsersListComponent
-                filteredUsers={this.props.filteredUsers}
-                onSortEnd={this.onSortEnd}
-                openUserDetailsModal={this.props.openUserDetailsModal}
-                saveUser={this.props.saveUser}
-                deleteUser={this.props.deleteUser}
-                isLoading={this.props.isLoading}
-                hasError={this.props.hasError}
-            />
-            <UserDetailsModal/>
-            <UserListPagination/>
-        </div>
+        return (
+            <div>
+                <UsersListComponent
+                    filteredUsers={this.props.filteredUsers}
+                    onSortEnd={this.onSortEnd}
+                    openUserDetailsModal={this.props.openUserDetailsModal}
+                    saveUser={this.props.saveUser}
+                    deleteUser={this.props.deleteUser}
+                    isLoading={this.props.isLoading}
+                    hasError={this.props.hasError}
+                />
+                <UserDetailsModal/>
+                <UserListPagination/>
+            </div>
         )
     };
 }

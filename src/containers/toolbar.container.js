@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import ToolBarComponent from '../components/toolbar.component';
 import NewUserForm from './new.user.form.container';
 import * as layoutActions from '../actions/layout.actions';

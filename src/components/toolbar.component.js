@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Field, reduxForm} from 'redux-form';
+import {InputField} from '../components/shared/input.fields';
 import styles from '../styles/components/toolbar.scss';
 import SearchLogo from '../assets/icons/search-logo.svg';
-import { Field, reduxForm } from 'redux-form';
-import {InputField} from '../components/shared/input.fields';
-
 
 let ToolBarComponent = ({openNewUserForm}) => {
     return (

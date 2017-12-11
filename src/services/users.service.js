@@ -8,7 +8,7 @@ const headers = new Headers({
     "Content-Type": "application/json"
 });
 
-export function getUsers (start, limit) {
+export function getUsers(start, limit) {
     let requestUrl = httpsPersonsApiPath + '?' + apiToken;
     if (limit !== undefined && start !== undefined) {
         console.log(limit)

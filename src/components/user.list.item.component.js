@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {SortableElement} from 'react-sortable-hoc';
 import UserAvatarComponent from './user.avatar.component';
 import {Button, ButtonCancel, ButtonConditional} from './shared/buttons';
 import {ORDER_FIELD_KEY} from '../constatns/custom.fields';
-
 import styles from '../styles/components/user.list.item.scss';
 import stylesButtons from '../styles/elements/buttons.scss';
 import CompanyIcon from '../assets/icons/company-icon.svg';

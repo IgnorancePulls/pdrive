@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form'
+import React from 'react';
+import {Field, reduxForm} from 'redux-form';
 import {InputField} from '../components/shared/input.fields';
 import {Button, ButtonCancel} from '../components/shared/buttons';
 import MessageComponent from './shared/messages';
@@ -14,15 +14,15 @@ import * as fv from '../helper/form.validator';
 let NewUserFormComponent = ({handleSubmit, onSubmit, onClose, isLoading, hasError}) => {
     let spinner = null;
     let message = null;
-    if(isLoading) spinner = <Spinner name="pacman" color="#2cbf55"/>;
-    if(hasError) {
+    if (isLoading) spinner = <Spinner name="pacman" color="#2cbf55"/>;
+    if (hasError) {
         message = <MessageComponent
             text={ERROR_MESSAGE}
             className={stylesMessages.error}
         />
     }
 
-    return(
+    return (
         <div className={styles.overlay}>
             <div className={styles.content}>
                 <div className={styles.header}>

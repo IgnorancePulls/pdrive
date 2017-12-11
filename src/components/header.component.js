@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Logo from '../assets/icons/pipedrive-logo.svg';
-
 import styles from '../styles/components/header.scss'
 
 const HeaderComponent = props => {

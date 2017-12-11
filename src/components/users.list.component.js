@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {SortableContainer} from 'react-sortable-hoc';
 import Spinner from 'react-spinkit';
 import UserListItem from './user.list.item.component';
@@ -10,9 +10,9 @@ import {ERROR_MESSAGE} from '../constatns/messages';
 const UsersListComponent = ({filteredUsers, openUserDetailsModal, deleteUser, saveUser, isLoading, hasError}) => {
     let spinner = null;
     let message = null;
-    if(isLoading) spinner = <Spinner name="pacman" color="#2cbf55"/>;
+    if (isLoading) spinner = <Spinner name="pacman" color="#2cbf55"/>;
 
-    if(hasError) {
+    if (hasError) {
         message = <MessageComponent
             text={ERROR_MESSAGE}
             className={stylesMessages.error}

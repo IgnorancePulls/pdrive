@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import PaginationComponent from '../components/pagination.component';
-
 import * as layoutActions from '../actions/layout.actions';
-
 
 const mapStateToProps = ({usersReducer, layoutReducer}) => {
     return {
@@ -28,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class UserListPagination extends Component {
     componentWillReceiveProps(nextProps) {
-        if(this.props.additionalData !== nextProps.additionalData) {
+        if (this.props.additionalData !== nextProps.additionalData) {
             this.checkPagination(nextProps.additionalData);
         }
     }
@@ -37,7 +35,7 @@ class UserListPagination extends Component {
         let newStart = 0;
         const limit = this.props.additionalData.pagination.limit;
         const start = this.props.additionalData.pagination.start;
-        if(start !== 0) {
+        if (start !== 0) {
             newStart = start - limit;
         }
 
@@ -54,7 +52,7 @@ class UserListPagination extends Component {
     }
 
     checkNext(additionalData) {
-        if(additionalData && additionalData.pagination.more_items_in_collection) {
+        if (additionalData && additionalData.pagination.more_items_in_collection) {
             this.props.enablePaginationNext();
         }
         else {
@@ -63,7 +61,7 @@ class UserListPagination extends Component {
     }
 
     checkPrev(additionalData) {
-        if(additionalData && additionalData.pagination.start !== 0) {
+        if (additionalData && additionalData.pagination.start !== 0) {
             this.props.enablePaginationPrev();
         }
         else {

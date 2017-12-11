@@ -33,7 +33,7 @@ const UserDetailsModalComponent = ({userDetails, closeUserDetailsModal}) => {
                     <div className={styles.primaryDetails}>
                         <div className={styles.modalAvatarWrapper}>
                             <UserAvatarComponent
-                            user={userDetails}
+                                user={userDetails}
                             />
                         </div>
                         <p className={styles.userName}>{userName}</p>

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import NewUserFormComponent from '../components/new.user.form.component';
 import * as newUserFormActions from '../actions/user.actions';
 import * as layoutActions from '../actions/layout.actions';
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class NewUserForm extends Component {
     render() {
-        if(!this.props.isOpen) return null;
+        if (!this.props.isOpen) return null;
 
         return (
             <NewUserFormComponent
