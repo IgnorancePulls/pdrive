@@ -11,7 +11,6 @@ const headers = new Headers({
 export function getUsers(start, limit) {
     let requestUrl = httpsPersonsApiPath + '?' + apiToken;
     if (limit !== undefined && start !== undefined) {
-        console.log(limit)
         requestUrl = httpsPersonsApiPath + '?start=' + start + '&limit=' + limit + '&' + apiToken;
     }
 
