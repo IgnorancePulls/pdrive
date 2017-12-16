@@ -37,7 +37,7 @@ export function LoadUsers(start, limit) {
         return getUsers(start, limit).then(
             response => {
                 const normalizedUsersData = Object.assign({}, response, {
-                    data: indexUsers(response.data),
+                    data: indexUsers(response.data || []),
                     additionalData: response.additional_data
                 });
                 dispatch(GetUserListCompleted(normalizedUsersData))
