@@ -2,7 +2,7 @@
 @import '../settings/colors';
 
 $user-list__padding: 0 $indent--s;
-$user-list-spinner__width: 32rem;
+$user-list-spinner__width: 10rem;
 
 .userList {
     composes: list from '../elements/list.scss';
