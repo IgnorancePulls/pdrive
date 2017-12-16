@@ -55,7 +55,6 @@ export function RemoveUser(userId) {
         return deleteUser(userId).then(
             response => {
                 dispatch(DeleteUserCompleted());
-                dispatch(LoadUsers());
             },
             error => dispatch(DeleteUserFailed())
         )

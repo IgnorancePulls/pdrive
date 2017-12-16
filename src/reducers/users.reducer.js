@@ -5,7 +5,8 @@ const initialState = {
     users: [],
     loading: false,
     hasError: false,
-    additionalData: null
+    additionalData: null,
+    userDeleted: false
 };
 
 export const usersReducer = (state = initialState, action) => {
@@ -71,19 +72,22 @@ export const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: true,
-                hasError: false
+                hasError: false,
+                userDeleted: false
             };
         case userActions.DELETE_USER_COMPLETED:
             return {
                 ...state,
                 loading: false,
-                hasError: false
+                hasError: false,
+                userDeleted: true
             };
         case userActions.DELETE_USER_FAILED:
             return {
                 ...state,
                 loading: false,
-                hasError: true
+                hasError: true,
+                userDeleted: false
             };
         default:
             return state;

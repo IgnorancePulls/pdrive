@@ -18,7 +18,8 @@ const mapStateToProps = (state) => {
         paginationLimit: state.layoutReducer.userListPagination.limit,
         isLoading: state.usersReducer.loading,
         hasError: state.usersReducer.hasError,
-        userSaved: state.userReducer.saved
+        userSaved: state.userReducer.saved,
+        userDeleted: state.usersReducer.userDeleted
     };
 };
 
@@ -46,6 +47,10 @@ class UsersList extends Component {
         }
 
         if (nextProps.userSaved !== this.props.userSaved) {
+            this.props.getUsers(this.props.paginationStart, this.props.paginationLimit);
+        }
+
+        if (nextProps.userDeleted !== this.props.userDeleted) {
             this.props.getUsers(this.props.paginationStart, this.props.paginationLimit);
         }
     };

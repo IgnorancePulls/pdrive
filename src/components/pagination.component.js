@@ -5,7 +5,6 @@ import stylesButtons from '../styles/elements/buttons.scss';
 import cx from "classnames";
 
 const PaginationComponent = ({next, prev, nextAllowed, prevAllowed}) => {
-    console.log(nextAllowed)
     let nextClassName = cx(stylesButtons.buttonSecondarySmall, {
         [stylesButtons.buttonSecondaryDisabled]: !nextAllowed,
     });
