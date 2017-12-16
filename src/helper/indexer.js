@@ -5,7 +5,7 @@ export const indexUsers = (users) => users
     .sort(sortUsersByOrderField);
 
 const defineUserIndex = (user, i) => {
-    if(user[ORDER_FIELD_KEY] === null && user.hasOwnProperty(ORDER_FIELD_KEY)) {
+    if(user.hasOwnProperty(ORDER_FIELD_KEY) && user[ORDER_FIELD_KEY] === null || user[ORDER_FIELD_KEY] === 0) {
         return Object.assign({}, user, {
             [ORDER_FIELD_KEY]: i
         });
@@ -36,7 +36,7 @@ export const generateSortableIndex = (users, newIndex) => {
     return generateUniqueID(prevIndex, nextIndex);
 };
 
-const generateUniqueID = (max, min) => {
+const generateUniqueID = (min, max) => {
     if (max === min || min > max) return Math.random();
     return Math.random() * (max - min) + min;
 };
