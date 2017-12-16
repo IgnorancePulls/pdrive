@@ -1,4 +1,4 @@
-export const BASE_URL = 'fetest.pipedrive.com/';
+export const BASE_URL = 'furious-hot.pipedrive.com/';
 export const API = 'v1/';
 export const PERSONS_PATH = 'persons/';
 
