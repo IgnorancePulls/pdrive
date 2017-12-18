@@ -33,7 +33,7 @@ Same way create Address field of type ‘Address’ and copy its key to `custom.
 
 ## Review of tasks
 
-* **It must be a single page application:** well it is a single page application
+* **It must be a single page application:** it is a single page application
 
 * **It must show a list of Persons fetched from Pipedrive API:** done
 
